@@ -1,0 +1,35 @@
+sudo vim /etc/shadowsocks.json
+
+```json
+    "server":"your.aaa.com", // 1
+    "server_ipv6": "::",
+    "server_port":10352, // 1
+    "local_address": "127.0.0.1", //1
+    "local_port":1080, //1
+    "password":"123", //1
+    "timeout":300,
+    "udp_timeout": 60,
+    "protocol": "auth_aes128_sha1", //1
+    "method":"chacha20", //1
+    "obfs_param": "", 
+    "obfs": "http_simple", //1
+    "fast_open": false
+}
+
+
+
+```
+
+
+### start
+
+```shell
+cd shadowsocks/
+sudo python local.py -c /etc/shadowsocks.json -d start
+```
+
+### stop
+
+```shell
+sudo python local.py -c /etc/shadowsocks.json -d stop
+```
